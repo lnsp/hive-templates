@@ -1,5 +1,9 @@
 package {{ .Service }}
 
+import (
+	"github.com/lnsp/hive/lib/service"
+)
+
 type {{ .Name }}Request struct {
 }
 
