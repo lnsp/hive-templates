@@ -1,9 +1,9 @@
 package main
 
 import (
-	{{ service.Path }}{{ service.Name }}
+	"{{ .Path }}"
 )
 
 func main() {
-	{{ service.Name }}.Service.Run()
+	{{ .Name }}.Service.Run()
 }

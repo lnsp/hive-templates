@@ -1,4 +1,4 @@
-package {{ service.Name }}
+package {{ .Name }}
 
 import (
 	"github.com/lnsp/hive/lib/service"
@@ -7,5 +7,5 @@ import (
 var Service service.Service
 
 func init() {
-	Service = service.New("{{ service.Name }}", "0.1.0")
+	Service = service.New("{{ .Name }}", "{{ .Version }}")
 }

@@ -1,18 +1,18 @@
-package {{ service.Name }}
+package {{ .Service }}
 
-type {{ method.Name }}Request struct {
+type {{ .Name }}Request struct {
 }
 
-type {{ method.Name }}Response struct {
+type {{ .Name }}Response struct {
 }
 
-var {{ method.Name }} service.Method
+var {{ .Name }} service.Method
 
-func {{ method.Name }}Handler(request interface{}) (interface{}, error) {
-	return &{{ method.Name }}Response{}, nil
+func {{ .Name }}Handler(request interface{}) (interface{}, error) {
+	return &{{ .Name }}Response{}, nil
 }
 
 func init() {
-	{{ method.Name }} = service.NewMethod("{{ method.Name }}", {{ method.Name }}Request{}, {{ method.Name }}Response{}, {{ method.Name }}Handler)
-	Service.Register({{ method.Name }})
+	{{ .Name }} = service.NewMethod("{{ .Name }}", {{ .Name }}Request{}, {{ .Name }}Response{}, {{ .Name }}Handler)
+	Service.Register({{ .Name }})
 }
