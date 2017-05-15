@@ -1,4 +1,4 @@
-package {{ .Service }}
+package methods
 
 import (
 	"github.com/lnsp/hive/lib/service"
@@ -17,9 +17,4 @@ var {{ .Name }} service.Method
 func {{ .Name }}Handler(requestData interface{}) (interface{}, error) {
 	request := requestData.(*{{ .Name }}Request)
 	return &{{ .Name }}Response{ Message: "Received message '" + request.Message + "'" }, nil
-}
-
-func init() {
-	{{ .Name }} = service.NewMethod("{{ .Name }}", {{ .Name }}Request{}, {{ .Name }}Response{}, {{ .Name }}Handler)
-	Service.Register({{ .Name }})
 }

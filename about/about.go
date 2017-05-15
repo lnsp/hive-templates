@@ -4,11 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"{{.Path}}"
+	"{{.Path}}/service"
 )
 
 func main() {
-	output, err := json.MarshalIndent({{.Name}}.Service, "", "  ")
+	output, err := json.MarshalIndent(service.Service, "", "  ")
 	if err != nil {
 		fmt.Println("Failed to retrieve service information.")
 		return
